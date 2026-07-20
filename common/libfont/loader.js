@@ -89,6 +89,11 @@
 			return;
 		}
 
+		// === [ARCHITECTURE] WASM 字体引擎加载 (FreeType + HarfBuzz + Zlib + Hyphen)
+		// 参考文档: sdkjs/doc/WASM_MODULES.md
+		// C 源码编译配置: core/DesktopEditor/fontengine/js/libfont.json
+		// 开源组件: FreeType 2.10.4 (字体解析), HarfBuzz (文字塑形), Zlib 1.2.11 (压缩)
+		// 回退策略: 不支持 WASM → 加载 asm.js 版 (fonts_ie.js)
 		var url = "../../../../sdkjs/common/libfont/engine/";
 		var useWasm = false;
 		var webAsmObj = window["WebAssembly"];

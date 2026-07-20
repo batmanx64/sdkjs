@@ -34,6 +34,10 @@
 
 (function(window, undefined) {
 
+	// === [ARCHITECTURE] WASM 哈希引擎加载 (xmlsec/OpenSSL SHA)
+	// 参考文档: sdkjs/doc/WASM_MODULES.md
+	// C 源码编译配置: core/DesktopEditor/xmlsec/src/wasm/hash/hash.json
+	// 用途: 文档完整性校验与签名验证
 	function CHashWorker(message, callback)
 	{
 		this.message = message;

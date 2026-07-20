@@ -32,6 +32,11 @@
 
 (function(window, undefined){
 
+	// === [ARCHITECTURE] WASM Zlib 压缩引擎加载
+	// 参考文档: sdkjs/doc/WASM_MODULES.md
+	// C 源码编译配置: core/OfficeUtils/js/zlib.json
+	// 开源组件: Zlib 1.2.11
+	// 用途: OOXML (.docx/.xlsx) ZIP 解压
 	var useWasm = false;
 	var webAsmObj = window["WebAssembly"];
 	if (typeof webAsmObj === "object")

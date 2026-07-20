@@ -898,6 +898,10 @@
 			
 			var basePath = window["AscViewer"]["baseEngineUrl"];
 			
+			// === [ARCHITECTURE] WASM PDF 渲染引擎加载 (自研 C++ PDF 引擎)
+			// 参考文档: sdkjs/doc/WASM_MODULES.md
+			// C 源码编译配置: core/DesktopEditor/graphics/pro/js/drawingfile.json
+			// 用途: PDF 页面解析与光栅化渲染
 			var useWasm = false;
 			var webAsmObj = window["WebAssembly"];
 			if (typeof webAsmObj === "object")
